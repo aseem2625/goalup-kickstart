@@ -1,0 +1,29 @@
+{
+  "name": "goalup-kickstart",
+  "version": "1.0.0",
+  "description": "Kickstarter CLI for your static-websites with best practices. Easily extendible!",
+  "main": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "goalup-kickstart": "./index.min.js"
+  },
+  "keywords": [
+    "Kickstart",
+    "build-tool",
+    "build-automation",
+    "gulp",
+    "uglifyjs2",
+    "clean-css",
+    "autoprefixer",
+    "imagemin",
+    "htmlmin"
+  ],
+  "author": "https://github.com/aseem2625",
+  "license": "GNU Lesser General Public License v3.0",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0"
+  }
+}
