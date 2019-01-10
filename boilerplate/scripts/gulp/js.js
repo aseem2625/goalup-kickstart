@@ -1,0 +1,1 @@
+/* Convert All public .js files to iife */

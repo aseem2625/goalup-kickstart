@@ -21,7 +21,7 @@ npm install -g goalup-kickstart
 ## Getting Started:
 
 ```sh
-goalup-kickart project_name
+goalup-kickart new project_name
 cd project_name
 ``` 
 
@@ -59,14 +59,27 @@ cd project_name
 <br />
 
 
-### Further TODOs:
+### Scope for this boilerplate:
 - Production-ready build - Add support for Environment variables
 - CSS preprocessors - Add option to use sass
 - Add support markdown
 - Live-reloading
 - Unit testing (chai + mocha)
+- Puppeteer test to check all routes are loaded fine without JS/CSS errors.
 - ESLint
 - CSSLint
+
+
+
+### Next Steps for You!
+- Animation Optimizations / Sequencing
+- Lighthouse for page loading speeds
+- PWA
+- Workbox
+- GA events
+- Polyfills
+- Cross browser Testing! [Browserstack](http://browserstack.com/)
+- For IE 8 support, use [es5-shims](https://github.com/es-shims/es5-shim)
 
 
 ### Kudos!
@@ -75,26 +88,6 @@ Kudos is an amazing way to exchange appreciation for the and inspire others.
 Using goalup-kickstarter in public projects? Add url below!
 
 
-
-### Further Reads!
-- Study the code organization for CSS and JS in boilerplate to see how you can manage yours.
-- Study DOM elements of boilerplate web page for Fast page load times.
-- Animation Optimizations / Sequencing.
-- Lighthouse for page loading speeds.
-- PWA.
-- Workbox.
-- GA events.
-- Cross browser Testing! [Browserstack](http://browserstack.com/)
-- For IE 8 support, use [es5-shims](https://github.com/es-shims/es5-shim)
-
-
-### Further Goals:
-- Check goalup-tour and goalup-snackbar if you need.
-- Check out goalup-css for UI Elements
-
-
-https://middlemanapp.com/basics/frontmatter/
-https://github.com/middleman/middleman
-https://github.com/cveneziani/middleman-boilerplate
-https://github.com/vigetlabs/blendid
-https://github.com/jbrodriguez/hugulp
+### Further Goals with goalups:
+- goalup-tour 
+- goalup-snackbar
