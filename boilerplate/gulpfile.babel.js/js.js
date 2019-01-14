@@ -22,8 +22,9 @@ const watchOptions = file => ({
   input: file,
   output: {
     format: 'iife',
-    file: path.join('public', path.parse(file).base),
-    name: 'window'
+    file: path.join('public','js', path.parse(file).base),
+    name: 'window',
+    banner: '/** @Copyright YourCompany 2019 **/',
   },
   cache: true,
   plugins
@@ -36,7 +37,7 @@ const rollupConfig = glob.sync('src/js/*.js').map(watchOptions);
 
 /* JS: WATCH */
 
-export function watchJs(cb) {
+export function watchJS(cb) {
   rollupConfig.forEach(config =>
     rollup.watch(config).on('event', e => {
       switch (e.code) {
