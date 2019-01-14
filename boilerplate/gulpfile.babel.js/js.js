@@ -2,14 +2,18 @@ import * as rollup from 'rollup';
 import path from 'path';
 import glob from 'glob';
 import include from 'rollup-plugin-includepaths';
-
 import buble from 'rollup-plugin-buble';
+import { uglify } from 'rollup-plugin-uglify';
+
+
+const isProduction = process.env.NODE_ENV === 'production';
 
 const plugins = [
   include({
     paths: ['source/js/helpers']
   }),
-  buble()
+  buble(),
+  isProduction && uglify()
 ];
 
 
@@ -21,17 +25,16 @@ const watchOptions = file => ({
     file: path.join('public', path.parse(file).base),
     name: 'window'
   },
+  cache: true,
   plugins
 });
 
 // Configs for all files in glob (async)
-let rollupConfig;
-glob('source/js/*.js', function(er, files) {
-  rollupConfig = files.map(watchOptions);
-});
+const rollupConfig = glob.sync('source/js/*.js').map(watchOptions);
 
 
-/**/
+
+/* JS: WATCH */
 
 export function watchJs(cb) {
   rollupConfig.forEach(config =>
@@ -49,5 +52,18 @@ export function watchJs(cb) {
       }
     })
   );
+}
 
+/* JS: BUILD */
+
+export default async function buildJS (cb) {
+  let bundlesCount = 0;
+
+  await Promise.all(rollupConfig.map(async config => {
+    const bundle = await rollup.rollup(config);
+    await bundle.write(config.output);
+
+    bundlesCount++;
+  }));
+  console.log('Total JS bundles: ', bundlesCount);
 }
