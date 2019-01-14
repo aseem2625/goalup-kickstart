@@ -10,7 +10,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 const plugins = [
   include({
-    paths: ['source/js/helpers']
+    paths: ['src/js/helpers']
   }),
   buble(),
   isProduction && uglify()
@@ -30,7 +30,7 @@ const watchOptions = file => ({
 });
 
 // Configs for all files in glob (async)
-const rollupConfig = glob.sync('source/js/*.js').map(watchOptions);
+const rollupConfig = glob.sync('src/js/*.js').map(watchOptions);
 
 
 
