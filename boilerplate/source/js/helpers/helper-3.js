@@ -5,3 +5,9 @@ export function someFunction(msg) {
 export default function() {
   console.log('A default function');
 }
+
+function fnUsedInSameFile() {
+  console.log('Random fn.');
+}
+
+fnUsedInSameFile();

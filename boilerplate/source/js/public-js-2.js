@@ -1,2 +1,2 @@
-// Bears can import another public JS file as well. Do take care of optimizations!
-import './public-js-1';
+// You can import other 'src/js/*.js' file. However, take care of script payload size in browser
+import 'public-js-1';
