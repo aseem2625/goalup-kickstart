@@ -1,9 +1,9 @@
 import gulp from 'gulp';
 import del from 'del';
 import path from 'path';
-import pump from 'pump';
 
-import buildJS, { watchJs } from './js';
+import buildJS, { watchJS } from './js';
+import buildCSS, { watchCSS } from './style';
 var workingDir = process.cwd();
 
 
@@ -12,8 +12,8 @@ const clean = () => del([path.join(workingDir, 'public')]);
 /* Clean */
 
 /* Watch */
-const watch = gulp.series(clean,watchJs);
-const build = gulp.series(clean, buildJS);
+const watch = gulp.series(clean, gulp.parallel(watchCSS, watchJS));
+const build = gulp.series(clean, gulp.parallel(buildCSS, buildJS));
 
 
 /* Prod Task */
