@@ -25,9 +25,7 @@ export function watchCSS(cb) {
     ], cb);
   }
 
-  gulp.watch('src/styles/**/**.+(styl|css)', compileCSS);
-
-  return compileCSS(cb);
+  return gulp.watch('src/styles/**/**.+(styl|css)', { ignoreInitial: false }, compileCSS);
 }
 
 // TODO: Refactor the common part. Making common array is not working, so to find different elegant alternate.
