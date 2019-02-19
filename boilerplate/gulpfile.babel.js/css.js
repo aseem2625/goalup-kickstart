@@ -12,26 +12,26 @@ const autoprefixerOptions = {
   cascade: true
 };
 const stylusOptions = {
-  paths: ['src/styles/imports'],
+  paths: ['src/css/imports'],
   'include css': true,
 };
 
 export function watchCSS(cb) {
   function compileCSS(cb) {
     return pump([
-      gulp.src(path.join('src/styles/*.+(styl|css)')),
+      gulp.src(path.join('src/css/*.+(styl|css)')),
       stylus(stylusOptions),
       gulp.dest(path.join('public','css'))
     ], cb);
   }
 
-  return gulp.watch('src/styles/**/**.+(styl|css)', { ignoreInitial: false }, compileCSS);
+  return gulp.watch('src/css/**/**.+(styl|css)', { ignoreInitial: false }, compileCSS);
 }
 
 // TODO: Refactor the common part. Making common array is not working, so to find different elegant alternate.
 export default function buildCSS(cb) {
   return pump([
-    gulp.src(path.join('src/styles/*.+(styl|css)')),
+    gulp.src(path.join('src/css/*.+(styl|css)')),
     stylus(stylusOptions),
     cleanCSS(),
     autoprefixer(autoprefixerOptions),
