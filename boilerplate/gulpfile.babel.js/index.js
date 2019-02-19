@@ -5,6 +5,7 @@ import path from 'path';
 import buildJS, { watchJS } from './js';
 import buildCSS, { watchCSS } from './css';
 import buildPug, { watchPug } from './html';
+import generateSitemap from './sitemap';
 
 const workingDir = process.cwd();
 
@@ -17,7 +18,7 @@ const clean = () => del([path.join(workingDir, 'public')]);
 
 /* Watch */
 const watch = gulp.series(clean, gulp.parallel(watchCSS, watchJS, watchPug));
-const build = gulp.series(clean, gulp.parallel(buildCSS, buildJS, buildPug));
+const build = gulp.series(clean, gulp.parallel(buildCSS, buildJS, buildPug), generateSitemap);
 
 
 /* Prod Task */

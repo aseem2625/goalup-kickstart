@@ -9,6 +9,8 @@ import through from 'through2';
 
 const workingDir = process.cwd();
 
+export const noIndexRoutes = [];
+
 function parseFilePath(file) {
   const p = path.parse(file.path);
   let filePath = `${p.dir}/${p.name}`;
@@ -38,6 +40,11 @@ const compileRoute = () => {
     );
 
     const pugTemplate = String(file.contents);
+
+    // To Skip routes with noIndex in frontMatter
+    if (file.frontMatter.noIndex) {
+      noIndexRoutes.push(relative);
+    }
 
     pug.render(pugTemplate, locals, (err, data) => {
       if (err) {
