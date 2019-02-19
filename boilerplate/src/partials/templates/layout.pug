@@ -1,0 +1,15 @@
+doctype html
+html(lang='en')
+    head
+        include /partials/head
+
+    body
+        #page-container
+            main
+                block main
+
+            block footer
+                include /partials/footer
+
+    block scripts
+        script(src='/js/public-js-1.js')

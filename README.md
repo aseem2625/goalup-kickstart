@@ -32,17 +32,15 @@ cd project_name
 
 ### Features Supported
 - es6+ JS
-- CSS preprocessor (stylus)
-- CSS auto-prefixers
+- CSS preprocessor (stylus) and auto-prefixers
 - Template engine and partials (.pug)
-- Data reading (.json / .yml)
+- Data reading (.yml)
 - Production-ready build (Minification + File hashing)
 - Lazy load images (+ Option to provide placeholder low quality image)
-- static file serving (Copied as it is to build folder. Use goalup-minify in case you need to minify assets inside)
+- static file serving (Copied directly to build folder. Use goalup-minify in case you need to minify assets inside)
 - sitemap and robot.txt
-- Dynamic pages from data (Helpful in creating pages with similar content FB share)
 - FE auto-redirect script
-- Pretty Urls (Directy Indexes)
+- Pretty Urls (Directory Indexes)
 - Get gzipped versions of assets HTML, CSS, Javascript and other files.
 
 
@@ -61,7 +59,6 @@ cd project_name
 
 ### Scope for this boilerplate:
 - Production-ready build - Add support for Environment variables
-- CSS preprocessors - Add option to use sass
 - Add support markdown
 - Live-reloading
 - Unit testing (chai + mocha)
@@ -83,7 +80,7 @@ cd project_name
 
 
 ### Kudos!
-Kudos is an amazing way to exchange appreciation for the and inspire others. 
+Kudos is an amazing way to exchange appreciation for the project and inspire others. 
 <br />
 Using goalup-kickstarter in public projects? Add url below!
 
@@ -91,3 +88,10 @@ Using goalup-kickstarter in public projects? Add url below!
 ### Further Goals with goalups:
 - goalup-tour 
 - goalup-snackbar
+
+
+https://middlemanapp.com/basics/frontmatter/
+https://github.com/middleman/middleman
+https://github.com/cveneziani/middleman-boilerplate
+https://github.com/vigetlabs/blendid
+https://github.com/jbrodriguez/hugulp
